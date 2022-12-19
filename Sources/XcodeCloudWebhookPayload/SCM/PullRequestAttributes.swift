@@ -1,5 +1,5 @@
 //
-//  SCMPullRequestAttributes.swift
+//  PullRequestAttributes.swift
 //  
 //
 //  Created by Jeremy Greenwood on 12/12/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct SCMPullRequestAttributes: Codable, Equatable, Sendable {
+public struct PullRequestAttributes: Codable, Equatable, Sendable {
     public let title: String
     public let number: Int
     public let htmlURL: String

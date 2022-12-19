@@ -1,5 +1,5 @@
 //
-//  CiBuildActionAttributes.swift
+//  BuildActionAttributes.swift
 //  
 //
 //  Created by Jeremy Greenwood on 12/12/22.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-public struct CIBuildActionAttributes: Codable, Equatable, Sendable {
+public struct BuildActionAttributes: Codable, Equatable, Sendable {
     public let name: String
-    public let actionType: String
+    public let actionType: ActionType
     public let issueCounts: IssueCounts
-    public let executionProgress: String
-    public let completionStatus: String
+    public let executionProgress: ExecutionProgress
+    public let completionStatus: CompletionStatus?
     public let isRequiredToPass: Bool
 
     enum CodingKeys: String, CodingKey {
@@ -26,10 +26,10 @@ public struct CIBuildActionAttributes: Codable, Equatable, Sendable {
 
     public init(
         name: String,
-        actionType: String,
+        actionType: ActionType,
         issueCounts: IssueCounts,
-        executionProgress: String,
-        completionStatus: String,
+        executionProgress: ExecutionProgress,
+        completionStatus: CompletionStatus?,
         isRequiredToPass: Bool
     ) {
         self.name = name

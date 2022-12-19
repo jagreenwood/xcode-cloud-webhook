@@ -1,5 +1,5 @@
 //
-//  CiProductAttributes.swift
+//  ProductAttributes.swift
 //  
 //
 //  Created by Jeremy Greenwood on 12/12/22.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct CIProductAttributes: Codable, Equatable, Sendable {
+public struct ProductAttributes: Codable, Equatable, Sendable {
     public let name: String
-    public let createdDate: String
-    public let productType: String
+    @DateCoding public var createdDate: Date
+    public let productType: ProductType
 
     enum CodingKeys: String, CodingKey {
         case name = "name"
@@ -20,8 +20,8 @@ public struct CIProductAttributes: Codable, Equatable, Sendable {
 
     public init(
         name: String,
-        createdDate: String,
-        productType: String
+        createdDate: Date,
+        productType: ProductType
     ) {
         self.name = name
         self.createdDate = createdDate

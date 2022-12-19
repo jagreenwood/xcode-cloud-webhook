@@ -1,5 +1,5 @@
 //
-//  CiBuildAction.swift
+//  BuildAction.swift
 //  
 //
 //  Created by Jeremy Greenwood on 12/12/22.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct CIBuildAction: Codable, Equatable, Sendable {
+public struct BuildAction: Codable, Equatable, Sendable {
     public let id: String
     public let type: String
-    public let attributes: CIBuildActionAttributes
+    public let attributes: BuildActionAttributes
     public let relationships: Relationships
 
     enum CodingKeys: String, CodingKey {
@@ -23,7 +23,7 @@ public struct CIBuildAction: Codable, Equatable, Sendable {
     public init(
         id: String,
         type: String,
-        attributes: CIBuildActionAttributes,
+        attributes: BuildActionAttributes,
         relationships: Relationships
     ) {
         self.id = id

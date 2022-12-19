@@ -1,5 +1,5 @@
 //
-//  CiBuildRunAttributes.swift
+//  BuildRunAttributes.swift
 //  
 //
 //  Created by Jeremy Greenwood on 12/12/22.
@@ -7,18 +7,20 @@
 
 import Foundation
 
-public struct CIBuildRunAttributes: Codable, Equatable, Sendable {
+public struct BuildRunAttributes: Codable, Equatable, Sendable {
     public let number: Int
-    public let createdDate: String
+    @DateCoding public var createdDate: Date
+    @OptionalDateCoding public var startedDate: Date?
     public let sourceCommit: SourceCommit
-    public let destinationCommit: DestinationCommit
+    public let destinationCommit: DestinationCommit?
     public let isPullRequestBuild: Bool
-    public let executionProgress: String
-    public let completionStatus: String
+    public let executionProgress: ExecutionProgress
+    public let completionStatus: CompletionStatus?
 
     enum CodingKeys: String, CodingKey {
         case number = "number"
         case createdDate = "createdDate"
+        case startedDate = "startedDate"
         case sourceCommit = "sourceCommit"
         case destinationCommit = "destinationCommit"
         case isPullRequestBuild = "isPullRequestBuild"
@@ -28,15 +30,17 @@ public struct CIBuildRunAttributes: Codable, Equatable, Sendable {
 
     public init(
         number: Int,
-        createdDate: String,
+        createdDate: Date,
+        startedDate: Date,
         sourceCommit: SourceCommit,
-        destinationCommit: DestinationCommit,
+        destinationCommit: DestinationCommit?,
         isPullRequestBuild: Bool,
-        executionProgress: String,
-        completionStatus: String
+        executionProgress: ExecutionProgress,
+        completionStatus: CompletionStatus?
     ) {
         self.number = number
         self.createdDate = createdDate
+        self.startedDate = startedDate
         self.sourceCommit = sourceCommit
         self.destinationCommit = destinationCommit
         self.isPullRequestBuild = isPullRequestBuild

@@ -1,5 +1,5 @@
 //
-//  CiBuildRun.swift
+//  GitReference.swift
 //  
 //
 //  Created by Jeremy Greenwood on 12/12/22.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct CIBuildRun: Codable, Equatable, Sendable {
+public struct GitReference: Codable, Equatable, Sendable {
     public let id: String
     public let type: String
-    public let attributes: CIBuildRunAttributes
+    public let attributes: GitReferenceAttributes
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -21,7 +21,7 @@ public struct CIBuildRun: Codable, Equatable, Sendable {
     public init(
         id: String,
         type: String,
-        attributes: CIBuildRunAttributes
+        attributes: GitReferenceAttributes
     ) {
         self.id = id
         self.type = type

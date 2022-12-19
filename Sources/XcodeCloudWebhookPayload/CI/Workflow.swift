@@ -1,5 +1,5 @@
 //
-//  SCMPullRequest.swift
+//  Workflow.swift
 //  
 //
 //  Created by Jeremy Greenwood on 12/12/22.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct SCMPullRequest: Codable, Equatable, Sendable {
+public struct Workflow: Codable, Equatable, Sendable {
     public let id: String
     public let type: String
-    public let attributes: SCMPullRequestAttributes
+    public let attributes: WorkflowAttributes
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -21,7 +21,7 @@ public struct SCMPullRequest: Codable, Equatable, Sendable {
     public init(
         id: String,
         type: String,
-        attributes: SCMPullRequestAttributes
+        attributes: WorkflowAttributes
     ) {
         self.id = id
         self.type = type
