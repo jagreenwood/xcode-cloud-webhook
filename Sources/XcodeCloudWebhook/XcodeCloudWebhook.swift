@@ -9,7 +9,7 @@ public protocol XcodeCloudWebhookHandler {
     func run(with payload: Payload) async throws
 }
 
-public actor XcodeCloudWebhook {
+public final actor XcodeCloudWebhook {
     typealias Storage = Array<XcodeCloudWebhookHandler>
 
     var _storage = Storage()

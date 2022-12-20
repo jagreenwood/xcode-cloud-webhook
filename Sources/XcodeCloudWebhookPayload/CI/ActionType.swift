@@ -8,5 +8,8 @@
 import Foundation
 
 public enum ActionType: String, Codable, Equatable, Sendable {
+    case ANALYZE
+    case ARCHIVE
+    case BUILD
     case TEST
 }
