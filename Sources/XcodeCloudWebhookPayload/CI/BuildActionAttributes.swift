@@ -9,7 +9,7 @@ import Foundation
 
 public struct BuildActionAttributes: Codable, Equatable, Sendable {
     public let name: String
-    public let actionType: ActionType
+    public let actionType: ActionType?
     public let issueCounts: IssueCounts
     public let executionProgress: ExecutionProgress
     public let completionStatus: CompletionStatus?
@@ -26,7 +26,7 @@ public struct BuildActionAttributes: Codable, Equatable, Sendable {
 
     public init(
         name: String,
-        actionType: ActionType,
+        actionType: ActionType?,
         issueCounts: IssueCounts,
         executionProgress: ExecutionProgress,
         completionStatus: CompletionStatus?,

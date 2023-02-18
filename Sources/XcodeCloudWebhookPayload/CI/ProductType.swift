@@ -9,4 +9,5 @@ import Foundation
 
 public enum ProductType: String, Codable, Equatable, Sendable {
     case APP
+    case FRAMEWORK
 }

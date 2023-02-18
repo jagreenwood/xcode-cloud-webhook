@@ -31,6 +31,3 @@ Run the webhook:
 ```swift
 try await webhook.run(payload)
 ```
-
-> **_NOTE:_**  Payload enums are most likely incomplete at this time since the payload model is not fully documented by Apple
- and will cause a `DecodingError`. If you come across these cases, please submit a pull request 🙏.

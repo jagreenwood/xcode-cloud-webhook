@@ -9,4 +9,5 @@ import Foundation
 
 public enum AttributeKind: String, Codable, Equatable, Sendable {
     case BRANCH
+    case TAG
 }

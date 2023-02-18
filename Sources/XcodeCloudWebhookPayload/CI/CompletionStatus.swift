@@ -8,6 +8,9 @@
 import Foundation
 
 public enum CompletionStatus: String, Codable, Equatable, Sendable {
+    case CANCELED
+    case ERRORED
     case FAILED
+    case SKIPPED
     case SUCCEEDED
 }
